@@ -19,7 +19,7 @@ SELECT MAX(release_date) FROM albums;
 SELECT name FROM albums WHERE artist = 'Pink Floyd';
 -- The Dark Side of the Moon and The Wall
 -- 4b:
-SELECT release_date FROM albums WHERE name = "Sgt. Pepper's Lonely Hearts Club Band";
+SELECT release_date FROM albums WHERE name = 'Sgt. Pepper\'s Lonely Hearts Club Band';
 -- 1967
 -- 4c:
 SELECT genre FROM albums WHERE name = 'Nevermind';
