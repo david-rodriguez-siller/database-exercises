@@ -11,8 +11,7 @@ SELECT COUNT(DISTINCT artist) FROM albums;
 SHOW CREATE TABLE albums;
 -- id is the primary key
 -- 3d: 
-SELECT MIN(release_date) FROM albums;
-SELECT MAX(release_date) FROM albums;
+SELECT MIN(release_date), MAX(release_date) FROM albums;
 -- the oldest relaase date is 1967 and the most recent release is 2011
 -- 4
 -- 4a:
