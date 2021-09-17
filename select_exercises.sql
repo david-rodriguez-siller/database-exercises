@@ -5,8 +5,8 @@ USE albums_db;
 SELECT * FROM albums;
 -- 31 rows
 -- 3b: 
-SELECT COUNT(DISTINCT name) FROM albums;
--- 31 unique names
+SELECT COUNT(DISTINCT artist) FROM albums;
+-- 23 unique names
 -- 3c
 SHOW CREATE TABLE albums;
 -- id is the primary key
