@@ -12,7 +12,7 @@ SELECT COUNT(last_name) FROM employees WHERE last_name LIKE 'E%' AND last_name L
 -- 6: There are 899 employees with last names that end and start with the letter E. The newest hire in this query is Teiji Eldridge and the oldest is Sergi Erde
 SELECT emp_no, first_name, last_name, hire_date FROM employees WHERE last_name LIKE 'E%' AND last_name LIKE '%E' ORDER BY hire_date DESC;
 SELECT COUNT(last_name) FROM employees WHERE last_name LIKE 'E%' AND last_name LIKE '%E';
--- 7: There are 362 employees hired in the 1990s and born on 12/25. The oldest hire in this query is Alselm Cappello and the newest hire is Khun Bernini
-SELECT emp_no, first_name, last_name, birth_date, hire_date FROM employees WHERE hire_date LIKE '199%' AND birth_date LIKE '%12-25' ORDER BY hire_date ASC;
+-- 7: There are 362 employees hired in the 1990s and born on 12/25. The oldest latest hire in this query is Khun Bernini and the youngest oldest hire is Douadi Pettis
+SELECT emp_no, first_name, last_name, birth_date, hire_date FROM employees WHERE hire_date LIKE '199%' AND birth_date LIKE '%12-25' ORDER BY birth_date ASC, hire_date DESC;
 SELECT COUNT(first_name) FROM employees WHERE hire_date LIKE '199%' AND birth_date LIKE '%12-25';
 
