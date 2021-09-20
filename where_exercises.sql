@@ -4,8 +4,8 @@ USE employees;
 SELECT COUNT(first_name) FROM employees WHERE first_name IN ('Irena', 'Vidya', 'Maya');
 -- 3: 709 employees have first names Irena, Vidya, or Maya
 SELECT COUNT(first_name) FROM employees WHERE first_name = 'Irena' OR first_name = 'Vidya' OR first_name = 'Maya';
--- 4: 619 employees have first names Irena, Vidya, or Maya and are male
-SELECT COUNT(first_name) FROM employees WHERE first_name = 'Irena' OR first_name = 'Vidya' OR first_name = 'Maya' AND gender = 'M';
+-- 4: 441 employees have first names Irena, Vidya, or Maya and are male
+SELECT COUNT(first_name) FROM employees WHERE gender = 'M' AND (first_name = 'Irena' OR first_name = 'Vidya' OR first_name = 'Maya');
 -- 5: 7330 employees have a last name that starts with the letter E
 SELECT COUNT(last_name) FROM employees WHERE last_name LIKE 'E%'; 
 -- 6: 30273 employees have a last name that starts or ends with an E. 23393 employess have a last name that ends with an E but does not start with E
