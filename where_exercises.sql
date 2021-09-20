@@ -11,7 +11,7 @@ SELECT COUNT(last_name) FROM employees WHERE last_name LIKE 'E%';
 -- 6: 30273 employees have a last name that starts or ends with an E. 23393 employess have a last name that ends with an E but does not start with E
 SELECT COUNT(last_name) FROM employees WHERE last_name LIKE 'E%' OR last_name LIKE '%E';
 SELECT COUNT(last_name) FROM employees WHERE last_name NOT LIKE 'E%' AND last_name LIKE '%E';
--- 7: 899 employees have a last name that starts or ends with an E. 24292 employees have last names that end with an E
+-- 7: 899 employees have a last name that starts and ends with an E. 24292 employees have last names that end with an E
 SELECT COUNT(last_name) FROM employees WHERE last_name LIKE 'E%' AND last_name LIKE '%E';
 SELECT COUNT(last_name) FROM employees WHERE last_name LIKE '%E';
 -- 8: 135214 employees were hired in the 90s
