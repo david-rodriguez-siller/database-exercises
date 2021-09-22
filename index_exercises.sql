@@ -1,0 +1,13 @@
+USE employees;
+SHOW CREATE TABLE departments;
+SHOW CREATE TABLE dept_emp;
+SHOW CREATE TABLE dept_manager;
+SHOW CREATE TABLE employees;
+SHOW CREATE TABLE employees.salaries;
+SHOW CREATE TABLE titles;
+DESCRIBE departments;
+DESCRIBE dept_emp;
+DESCRIBE dept_manager;
+DESCRIBE employees;
+DESCRIBE employees.salaries;
+DESCRIBE titles;
