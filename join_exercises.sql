@@ -179,6 +179,12 @@ JOIN departments ON dept_emp.dept_no = departments.dept_no
 WHERE dept_emp.dept_no = 'd009' AND salaries.to_date LIKE '9%'
 ORDER BY salaries.salary DESC
 LIMIT 1;
-
-
-
+-- EXTRA: Determine the average salary for each department. Use all salary information and round your results.
+-- d001 - Marketing
+SELECT departments.dept_name AS 'Department Name', ROUND(AVG(salaries.salary), 0) AS 'Average Salary'
+FROM departments
+JOIN dept_emp ON departments.dept_no = dept_emp.dept_no
+JOIN employees.salaries ON dept_emp.emp_no = salaries.emp_no
+GROUP BY departments.dept_name
+ORDER BY AVG(salaries.salary) DESC
+LIMIT 15;
