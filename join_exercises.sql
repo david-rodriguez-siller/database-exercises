@@ -84,7 +84,7 @@ LIMIT 1;
 -- 9:
 SELECT departments.dept_name AS 'Department Name', CONCAT(employees.first_name, ' ', employees.last_name) AS 'Manager Name', employees.emp_no AS 'Employee ID', salaries.salary AS 'Salary'
 FROM departments 
-JOIN dept_manager ON departments.dept_no = dept_manager.dept_no 
+JOIN dept_manager ON departments.dept_no = dept_manager.dept_no
 JOIN employees ON employees.emp_no = dept_manager.emp_no
 JOIN employees.salaries ON employees.emp_no = salaries.emp_no
 WHERE dept_manager.to_date LIKE '9%' AND salaries.to_date LIKE '9%'
