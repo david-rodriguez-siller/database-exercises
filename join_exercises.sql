@@ -32,39 +32,44 @@ SELECT departments.dept_name AS 'Department Name', CONCAT(employees.first_name, 
 FROM departments 
 JOIN dept_manager ON departments.dept_no = dept_manager.dept_no 
 JOIN employees ON employees.emp_no = dept_manager.emp_no
-WHERE dept_manager.to_date LIKE '9%';
+WHERE dept_manager.to_date LIKE '9%'
+ORDER BY departments.dept_name;
 -- 3: 
 SELECT departments.dept_name AS 'Department Name', CONCAT (employees.first_name, ' ', employees.last_name) AS 'Manager Name', employees.emp_no AS 'Employee ID' 
 FROM departments 
 JOIN dept_manager ON departments.dept_no = dept_manager.dept_no 
 JOIN employees ON employees.emp_no = dept_manager.emp_no 
-WHERE employees.gender = 'F' AND dept_manager.to_date LIKE '9%';
+WHERE employees.gender = 'F' AND dept_manager.to_date LIKE '9%'
+ORDER BY departments.dept_name;
 -- 4:
 SELECT titles.title AS 'Title Name', COUNT(employees.first_name) AS 'Employee Count' 
 FROM employees 
 JOIN titles ON employees.emp_no = titles.emp_no 
 JOIN dept_emp ON dept_emp.emp_no = employees.emp_no 
 WHERE dept_emp.to_date LIKE '9%' AND dept_emp.dept_no = 'd009' AND titles.to_date LIKE '9%' 
-GROUP BY titles.title;
+GROUP BY titles.title
+ORDER BY titles.title;
 -- 5: 
 SELECT departments.dept_name AS 'Department Name', CONCAT(employees.first_name, ' ', employees.last_name) AS 'Manager Name', employees.emp_no AS 'Employee ID', salaries.salary AS 'Salary'
 FROM departments 
 JOIN dept_manager ON departments.dept_no = dept_manager.dept_no 
 JOIN employees ON employees.emp_no = dept_manager.emp_no
 JOIN employees.salaries ON salaries.emp_no = employees.emp_no
-WHERE dept_manager.to_date LIKE '9%' AND salaries.to_date LIKE '9%';
+WHERE dept_manager.to_date LIKE '9%' AND salaries.to_date LIKE '9%'
+ORDER BY departments.dept_name;
 -- 6:
 SELECT dept_emp.dept_no AS 'Department Number', departments.dept_name AS 'Department Name', COUNT(dept_emp.dept_no) AS 'Employee Count'
 FROM dept_emp
 JOIN departments ON dept_emp.dept_no = departments.dept_no
 WHERE dept_emp.to_date LIKE '9%'
-GROUP BY dept_emp.dept_no;
+GROUP BY dept_emp.dept_no
+ORDER BY dept_emp.dept_no;
 -- 7:
 SELECT departments.dept_name AS 'Department Name', AVG(salaries.salary) AS 'Average Salary'
 FROM departments
 JOIN dept_emp ON departments.dept_no = dept_emp.dept_no
 JOIN employees.salaries ON dept_emp.emp_no = salaries.emp_no
-WHERE salaries.to_date LIKE '9%'
+WHERE dept_emp.to_date LIKE '9%' AND salaries.to_date LIKE '9%'
 GROUP BY departments.dept_name
 ORDER BY AVG(salaries.salary) DESC
 LIMIT 1;
