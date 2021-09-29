@@ -33,7 +33,7 @@ FROM departments;
 SELECT * FROM hopper_1562.grouped_departments;
 
 -- Find current average salary
-SELECT grouped_departments.dept_group, ROUND(AVG(salaries.salary), 2) AS avg_salary
+SELECT grouped_departments.dept_group, ROUND(AVG(salaries.salary), 2) AS avg_salary, COUNT(emp_no) AS headcount
 FROM salaries
 JOIN dept_emp USING(emp_no)
 JOIN hopper_1562.grouped_departments USING(dept_no)
