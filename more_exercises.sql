@@ -17,4 +17,18 @@ JOIN departments USING(dept_no)
 WHERE salaries.to_date LIKE '9%'
 GROUP BY dept_no
 ORDER BY dept_no;
--- Is there any department where the department manager gets paid less than the average salary? Yes, production and customer service managers get paid less than the average salary for the department.s
+-- Is there any department where the department manager gets paid less than the average salary? Yes, production and customer service managers get paid less than the average salary for the departments
+
+-- World Database:
+USE world;
+-- What languages are spoken in Santa Monica?
+SELECT city.name, countrylanguage.language, countrylanguage.percentage
+FROM city
+JOIN countrylanguage USING(countrycode)
+WHERE name LIKE 'Santa Monica'
+ORDER BY percentage DESC;
+-- How many different countries are in each region?
+SELECT region, COUNT(name) AS num_countries
+FROM country
+GROUP BY region
+ORDER BY num_countries;
